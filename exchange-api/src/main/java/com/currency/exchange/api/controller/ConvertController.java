@@ -1,13 +1,23 @@
 package com.currency.exchange.api.controller;
 
+import com.currency.exchange.core.domain.ExchangeRate;
+import com.currency.exchange.core.service.ExchangeRateService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController("v1/conversion")
 public class ConvertController {
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "Currency Exchange Service is running!";
-    }
+  private final ExchangeRateService exchangeRateService;
+
+  public ConvertController(ExchangeRateService exchangeRateService) {
+    this.exchangeRateService = exchangeRateService;
+  }
+
+  @GetMapping("/rate")
+  public ExchangeRate getConversionRate(
+      @RequestParam("from") String fromCurrency, @RequestParam("to") String toCurrency) {
+    return exchangeRateService.getRate(fromCurrency, toCurrency);
+  }
 }
