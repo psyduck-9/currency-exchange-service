@@ -30,7 +30,7 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- Depend on core & infra -->
+        <!-- Depends on core & infra -->
         <dependency>
             <groupId>com.currency</groupId>
             <artifactId>exchange-core</artifactId>
