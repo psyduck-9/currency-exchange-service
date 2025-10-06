@@ -17,7 +17,7 @@ public class ConvertController {
 
   @GetMapping("/rate")
   public ExchangeRate getConversionRate(
-      @RequestParam String fromCurrency, @RequestParam String toCurrency) {
+      @RequestParam("from") String fromCurrency, @RequestParam("to") String toCurrency) {
     return exchangeRateService.getRate(fromCurrency, toCurrency);
   }
 }
