@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: currency-exchange-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/currency_exchange
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true #TODO: remove before pushing to prod, creates too much noise
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration

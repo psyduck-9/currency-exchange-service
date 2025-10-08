@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "com.currency.exchange")
 public class ExchangeApiApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(ExchangeApiApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(ExchangeApiApplication.class, args);
+  }
 }

@@ -1,7 +1,7 @@
 package com.currency.exchange.api.controller;
 
-import com.currency.exchange.core.domain.ExchangeRate;
-import com.currency.exchange.core.service.ExchangeRateService;
+import com.currency.exchange.core.domain.model.ExchangeRate;
+import com.currency.exchange.core.domain.service.ExchangeRateService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
