@@ -38,7 +38,7 @@ public class ExchangeRateEntity {
   @Column(name = "created_by", length = 100)
   private String createdBy;
 
-  @Column(name = "created_by", length = 100)
+  @Column(name = "updated_by", length = 100)
   private String updatedBy;
 
   public ExchangeRateEntity() {

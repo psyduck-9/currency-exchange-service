@@ -16,11 +16,11 @@ public class ExchangeRateService {
     this.exchangeRateRepository = exchangeRateRepository;
   }
 
-  public ExchangeRate getRate(String fromCurrency, String toCurrency, LocalDate date)
+  public ExchangeRate getLatestCurrencyConversionRate(String fromCurrency, String toCurrency)
       throws ExchangeRateNotFoundException {
     return exchangeRateRepository
         .findTopByBaseCurrencyCodeAndTargetCurrencyCodeOrderByEffectiveDateDesc(
-            fromCurrency, toCurrency, date)
+            fromCurrency, toCurrency)
         .map(ExchangeRate::fromEntity)
         .orElseThrow(
             () ->
